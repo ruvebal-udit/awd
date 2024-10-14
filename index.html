@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona z Gridem</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://t4.ftcdn.net/jpg/08/43/53/13/360_F_843531308_xGaAzUefMbnzAZFA3uDLbfpUF2YdUdlm.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            color: rgb(255, 255, 255); 
+            font-family: 'Century gothic', sans-serif; 
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Jedna kolumna */
+            grid-template-rows: auto 1fr auto; /* Układ: header, main, footer */
+            height: 100vh;
+            gap: 10px;
+        }
+
+        header, main, footer {
+            padding: 20px;
+            background-color: rgba(199, 125, 177, 0.782); /* Półprzezroczyste tło */
+        }
+
+        header {
+            grid-row: 1; /* Nagłówek zajmuje pierwszy rząd */
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none; 
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 15px; 
+        }
+
+        main {
+            grid-row: 2; /* Główna treść zajmuje drugi rząd */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 kolumny o równych szerokościach */
+            gap: 20px;
+        }
+
+        section {
+            background-color: rgba(238, 205, 166, 0.8); /* Półprzezroczyste tło sekcji */
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            grid-row: 3; /* Stopka zajmuje trzeci rząd */
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Didot', sans-serif; 
+        }
+
+        footer p {
+            margin-top: 20px;
+        }
+    </style>
+    <script src="script.js" defer></script> 
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <h1>hello</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home">
+                <h2>Home Section</h2>
+                <p>This is the home section of the webpage.</p>
+            </section>
+
+            <section id="about">
+                <h2>About Section</h2>
+                <p>This section provides information about the website or author.</p>
+            </section>
+
+            <section id="contact">
+                <h2>Contact Section</h2>
+                <p>Contact details or a contact form can be placed here.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Agata. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
