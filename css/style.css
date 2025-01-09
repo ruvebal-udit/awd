@@ -1,0 +1,338 @@
+/* Nawigacja */
+.navbar {
+  display: flex;
+  height: 60px; /* Stała wysokość nawigacji */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffcbe0;
+  color: #1b1b1b;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Pełna szerokość */
+  z-index: 1000; /* Na wierzchu */
+}
+
+/* Hamburger Menu */
+.hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  left: 20px; /* Hamburger po lewej stronie */
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(0, 0, 0);
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Menu */
+.menu {
+  list-style: none;
+  display: none; /* Ukryte domyślnie */
+  background-color: #333;
+  position: absolute;
+  left: 20px;
+  top: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  z-index: 999; /* Na wierzchu względem innych elementów */
+}
+
+.menu li {
+  margin: 10px 0;
+}
+
+.menu a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Menu rozwijane */
+.menu.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kontener przewijania horyzontalnego */
+.horizontal-scroll {
+  overflow: hidden; /* Ukryj nadmiar przewijania */
+  white-space: nowrap; /* Zapobiega zawijaniu elementów */
+  height: 80vh; /* Całkowita wysokość widoku */
+  margin-top: 60px; /* Dopasowanie do wysokości nawigacji */
+  background-color: #1b1b1b; /* Opcjonalne tło */
+}
+
+/* Kontener stron */
+.scroll-container {
+  display: flex; /* Układ horyzontalny */
+  gap: 0; /* Bez odstępów między stronami */
+  scroll-snap-type: x mandatory; /* Zatrzymywanie na stronach */
+  overflow: hidden; /* Ukryj przewijanie w poziomie */
+}
+
+/* Strony */
+.page {
+  flex: 0 0 100vw; /* Każda strona zajmuje całą szerokość widoku */
+  height: 100vh; /* Pełna wysokość widoku */
+  display: flex; /* Ustawienie elementów w rzędzie */
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b; /* Opcjonalne tło stron */
+  padding: 2vw; /* Wewnętrzne odstępy */
+  box-sizing: border-box; /* Uwzględnij padding w wymiarach strony */
+  scroll-snap-align: start; /* Zatrzymanie przewijania na początku strony */
+}
+
+/* Obrazek w kontenerze */
+.image-container {
+  flex: 0 0 40%; /* Zajmuje 30% szerokości strony */
+  height: 100%; /* 80% wysokości kontenera */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ukrycie nadmiaru obrazka */
+}
+
+.image-container img {
+  width: auto; /* Dopasowanie szerokości obrazu */
+  height: 100%; /* Dopasowanie wysokości obrazu */
+  object-fit: cover; /* Przycięcie obrazu */
+}
+
+/* Tekst w kontenerze */
+.text-container {
+  color: #ffcbe0; /* Kolor tekstu */
+  flex: 1; /* Kontener zajmuje całą szerokość i wysokość strony */
+  height: calc(
+    100vh - 60px
+  ); /* Wysokość strony pomniejszona o wysokość nawigacji */
+  display: flex; /* Flexbox do wyśrodkowania */
+  justify-content: center; /* Wyśrodkowanie w poziomie */
+  align-items: center; /* Wyśrodkowanie w pionie */
+  font-size: 3rem; /* Skalowalna czcionka */
+  font-family: "Homemade Apple", cursive; /* Zmieniono na Homemade Apple */
+  font-weight: 400;
+  padding-bottom: 15%;
+  text-align: center; /* Wyśrodkowanie tekstu */
+  background-color: #1b1b1b; /* Tło kontenera */
+  border-radius: 5px; /* Zaokrąglenie rogów */
+  margin-top: 60px; /* Przesunięcie w dół, aby uwzględnić navbar */
+  box-sizing: border-box; /* Uwzględnij padding w wymiarach */
+}
+/* Strzałki */
+.arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.left-arrow {
+  left: 20px; /* Strzałka po lewej */
+}
+
+.right-arrow {
+  right: 20px; /* Strzałka po prawej */
+}
+
+.arrow:hover {
+  background-color: rgba(220, 177, 177, 0.8);
+}
+body {
+  background-color: #1b1b1b;
+}
+.footer {
+  position: fixed; /* Ustawienie stopki na stałe na dole ekranu */
+  bottom: 0; /* Wyrównanie do dolnej krawędzi */
+  left: 0; /* Rozpoczęcie od lewej krawędzi */
+  width: 100%; /* Pełna szerokość */
+  background-color: #1b1b1b; /* Kolor tła */
+  color: #ffcbe0; /* Kolor tekstu */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  padding: 10px 0; /* Pionowe odstępy w stopce */
+  font-size: 1rem; /* Rozmiar tekstu */
+  z-index: 1000; /* Ustawienie na wierzchu */
+  box-shadow: 0 -2px 10px #1b1b1b4d; /* Delikatny cień nad stopką */
+}
+/* Styl domyślny (dla komputerów) */
+.horizontal-scroll {
+  overflow: hidden; /* Ukryj nadmiar przewijania */
+  white-space: nowrap; /* Zapobiega zawijaniu elementów */
+  height: 80vh; /* Całkowita wysokość widoku */
+  margin-top: 60px; /* Dopasowanie do wysokości nawigacji */
+  background-color: #1b1b1b; /* Opcjonalne tło */
+}
+
+.scroll-container {
+  display: flex; /* Układ horyzontalny */
+  gap: 0; /* Bez odstępów między stronami */
+  scroll-snap-type: x mandatory; /* Zatrzymywanie na stronach */
+  overflow: hidden; /* Ukryj przewijanie w poziomie */
+}
+
+/* Dla urządzeń mobilnych i tabletów */
+@media (max-width: 768px) {
+  .horizontal-scroll {
+    overflow-x: scroll; /* Horyzontalne przewijanie */
+    overflow-y: hidden; /* Wyłącz pionowe przewijanie */
+    display: flex;
+    height: 100vh; /* Cała wysokość widoku */
+    scroll-snap-type: x mandatory; /* Zatrzymywanie na stronie */
+  }
+
+  .scroll-container {
+    display: flex;
+    flex-direction: row; /* Horyzontalny układ stron */
+    height: 100vh;
+    width: 100%;
+  }
+
+  .page {
+    flex: 0 0 100vw; /* Każda strona zajmuje pełną szerokość widoku */
+    display: flex;
+    flex-direction: column; /* Układ pionowy */
+    justify-content: flex-start; /* Obraz na górze */
+    overflow-y: auto; /* Włącz pionowe przewijanie */
+    scroll-snap-align: start; /* Zatrzymanie na początku strony */
+    height: 100vh; /* Pełna wysokość widoku */
+    box-sizing: border-box;
+  }
+
+  .image-container {
+    width: 100%; /* Kontener obrazu zajmuje całą szerokość */
+    height: calc(33.33% - 20px); /* Zdjęcie zajmuje 1/3 wysokości strony */
+    margin: 10px 0; /* Dodatkowy margines */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ukrycie nadmiaru obrazu */
+  }
+
+  .image-container img {
+    width: auto; /* Dopasowanie szerokości obrazu */
+    height: 100%; /* Obraz rozciąga się na pełną wysokość kontenera */
+    object-fit: cover; /* Przycięcie obrazu w celu dopasowania */
+  }
+  .text-container {
+    flex: 0 0 auto;
+    width: 100%; /* Kontener tekstu zajmuje pełną szerokość */
+    text-align: center;
+    height: calc(33.33% - 20px); /* Tekst zajmuje 1/3 wysokości strony */
+    padding: 10px 0;
+    font-size: 2rem;
+    color: #ffcbe0;
+    background-color: #1b1b1b; /* Opcjonalne tło tekstu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+}
+/* Efekt myszki */
+.mouse-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 203, 224, 1) 0%,
+    rgba(255, 203, 224, 0) 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.mouse-effect:hover {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 203, 224, 0.9);
+}
+/* Stylizacja dla nagłówka strony */
+.navbar {
+  display: flex;
+  justify-content: center; /* Wyśrodkowanie logo */
+  align-items: center;
+  height: 80px; /* Wysokość nagłówka */
+  background-color: #ffcbe0; /* Różowe tło */
+  color: #1b1b1b; /* Ciemny kolor tekstu */
+  font-family: "Homemade Apple", cursive; /* Użycie wybranej czcionki */
+  font-size: 3rem; /* Rozmiar czcionki */
+  font-weight: normal; /* Normalna grubość */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Cień pod nagłówkiem */
+  text-transform: capitalize; /* Pierwsze litery wielkie */
+}
+/* Modal (Okienko) */
+.modal {
+  display: none; /* Ukryj domyślnie */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Półprzezroczyste tło */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Na wierzchu innych elementów */
+}
+
+.modal-content {
+  background-color: #ffcbe0;
+  color: #1b1b1b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: "Arial", sans-serif; /* Klasyczna czcionka */
+  font-size: 1rem; /* Zmniejszony rozmiar czcionki */
+  line-height: 1.5; /* Poprawa czytelności tekstu */
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #1b1b1b;
+}
+
+.close-button:hover {
+  color: #ff4d4d;
+}

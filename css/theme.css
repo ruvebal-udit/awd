@@ -1,0 +1,29 @@
+:root {
+  --background: #fce8e9; /* Jasny róż */
+  --foreground: #fff7d6; /* Jasny żółty */
+
+  --card: #d7f0ff; /* Ja
+    --card-foreground: #ffccd5; /* Delikatny róż */
+
+  --popover: #ffccd5; /* Delikatny róż */
+  --popover-foreground: #4a4e69; /* Ciemny szary */
+
+  --primary: #ff9a8b; /* Jasny koralowy róż */
+  --primary-foreground: #4a4e69; /* Ciemny szary */
+
+  --secondary: #ffd166; /* Jasny żółty */
+  --secondary-foreground: #4a4e69; /* Ciemny szary */
+
+  --muted: #ff9a8b; /* Jasny koralowy róż */
+  --muted-foreground: #4a4e69; /* Ciemny szary */
+
+  --accent: #d7f0ff; /* Jasny błękit */
+  --accent-foreground: #4a4e69; /* Ciemny szary */
+
+  --destructive: #ffccd5; /* Delikatny róż */
+  --destructive-foreground: #4a4e69; /* Ciemny szary */
+
+  --border: #ffd166; /* Jasny żółty */
+  --input: #d7f0ff; /* Jasny błękit */
+  --ring: #da6b99; /* Jasny koralowy róż */
+}
